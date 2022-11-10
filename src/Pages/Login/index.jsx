@@ -1,9 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import Button from "../../Components/Button";
 import * as S from "./styles";
 import image from "../../images/primeiratela.png";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   return (
     <S.Container>
       <S.ColumnLeft>
@@ -20,8 +24,10 @@ const Login = () => {
           <input type="text" />
           <S.Linker to="#">Esqueceu sua senha?</S.Linker>
 
-          <Button>Logar</Button>
-          <Button outline>Cadastrar-se</Button>
+          <Button onClick={() => navigate("dashboard")}>Logar</Button>
+          <Button outline onClick={() => navigate("/register")}>
+            Cadastrar-se
+          </Button>
         </S.Form>
       </S.ColumnRight>
     </S.Container>
