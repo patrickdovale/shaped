@@ -56,6 +56,7 @@ export const Linker = styled(Link)`
   font-size: 16px;
   line-height: 24px;
   color: #3e7d89;
+  margin-bottom: 16px;
 
   :hover {
     text-decoration: underline;
