@@ -24,7 +24,7 @@ const Login = () => {
           <input type="text" />
           <S.Linker to="#">Esqueceu sua senha?</S.Linker>
 
-          <Button onClick={() => navigate("dashboard")}>Logar</Button>
+          <Button onClick={() => navigate("/dashboard")}>Logar</Button>
           <Button outline onClick={() => navigate("/register")}>
             Cadastrar-se
           </Button>
