@@ -1,12 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
+import InputText from "../../Components/Inputs/Text/index";
 import Button from "../../Components/Button";
 import * as S from "./styles";
 import image from "../../images/primeiratela.png";
 
 const Login = () => {
   const navigate = useNavigate();
+
+  const { control, setValue } = useForm();
 
   return (
     <S.Container>
@@ -20,8 +24,18 @@ const Login = () => {
       <S.ColumnRight>
         <S.Form>
           <S.Title>Fazer login</S.Title>
-          <input type="text" />
-          <input type="text" />
+          <InputText
+            name="email"
+            label="Email"
+            control={control}
+            setValue={setValue}
+          />
+          <InputText
+            name="password"
+            label="Senha"
+            control={control}
+            setValue={setValue}
+          />
           <S.Linker to="#">Esqueceu sua senha?</S.Linker>
 
           <Button onClick={() => navigate("/dashboard")}>Logar</Button>
