@@ -70,7 +70,7 @@ export const FormGroup = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 0 0 20px;
+  margin: 0 0 16px;
   position: relative;
   transition: all 0.3s ease;
 
@@ -85,7 +85,7 @@ export const FormGroup = styled.div`
   }
 
   .form-remember {
-    font-size: 16px;
+    font-size: 10px;
     font-weight: 400;
     letter-spacing: 0;
     text-transform: none;
@@ -95,22 +95,22 @@ export const FormGroup = styled.div`
     color: red;
   }
   font-weight: 400;
-  font-size: 16px;
+  font-size: 10px;
   text-decoration: none;
 
   &[data-error],
   &[data-success] {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     ${ClearIcon} {
       right: 35px;
     }
 
     &::after {
       position: absolute;
-      font-size: 16px;
+      font-size: 10px;
       line-height: 1rem;
       color: gray;
-      bottom: -1.5rem;
+      bottom: -1rem;
       left: 0;
       width: 100%;
       text-align: left;

@@ -20,6 +20,7 @@ const Text = forwardRef(function Component(
     defaultValue = "",
     disabled = false,
     setInputValue,
+    type = "text",
   },
   refComponent
 ) {
@@ -103,6 +104,7 @@ const Text = forwardRef(function Component(
         disabled={disabled || rules.disabled}
         onFocus={() => handleInputFocus()}
         onBlur={() => handleInputBlur()}
+        type={type}
       />
       {!rules.disabled ? (
         <S.ClearIcon
