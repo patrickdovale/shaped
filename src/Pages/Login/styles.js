@@ -36,12 +36,12 @@ export const ColumnRight = styled.div`
   display: flex;
   flex: 1;
   background-color: #e4ebee;
-`;
 
-export const Form = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 405px;
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 405px;
+  }
 `;
 
 export const Title = styled.h1`

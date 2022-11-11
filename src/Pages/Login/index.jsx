@@ -10,7 +10,11 @@ import image from "../../images/primeiratela.png";
 const Login = () => {
   const navigate = useNavigate();
 
-  const { control, setValue } = useForm();
+  const { handleSubmit, control, setValue } = useForm();
+
+  const onSubmit = () => {
+    navigate("/dashboard");
+  };
 
   return (
     <S.Container>
@@ -22,27 +26,33 @@ const Login = () => {
         </S.Description>
       </S.ColumnLeft>
       <S.ColumnRight>
-        <S.Form>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <S.Title>Fazer login</S.Title>
           <InputText
             name="email"
             label="Email"
             control={control}
             setValue={setValue}
+            rules={{
+              required: true,
+            }}
           />
           <InputText
             name="password"
             label="Senha"
             control={control}
             setValue={setValue}
+            rules={{
+              required: true,
+            }}
           />
           <S.Linker to="#">Esqueceu sua senha?</S.Linker>
 
-          <Button onClick={() => navigate("/dashboard")}>Logar</Button>
-          <Button outline onClick={() => navigate("/register")}>
+          <Button>Logar</Button>
+          <Button type="button" outline onClick={() => navigate("/register")}>
             Cadastrar-se
           </Button>
-        </S.Form>
+        </form>
       </S.ColumnRight>
     </S.Container>
   );

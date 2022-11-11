@@ -2,7 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
-import Input from "../../Components/Inputs/Text/index";
+import Input from "../../Components/Inputs/Text";
+import Select from "../../Components/Inputs/Select";
 import Button from "../../Components/Button";
 import * as S from "./styles";
 import image from "../../images/primeiratela.png";
@@ -28,7 +29,7 @@ const Register = () => {
       </S.ColumnLeft>
       <S.ColumnRight>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <S.Title>Fazer Register</S.Title>
+          <S.Title>Cadastro</S.Title>
           <Input
             name="name"
             label="Nome"
@@ -59,18 +60,23 @@ const Register = () => {
                 validate: validateCPF,
               }}
             />
-            <Input
+            <Select
               name="profession"
               label="Profissão"
               control={control}
               setValue={setValue}
+              type="select"
               rules={{
                 required: true,
               }}
-            />
+            >
+              <option></option>
+              <option value="Nutricionista">Nutricionista</option>
+              <option value="Medico">Médico</option>
+            </Select>
           </S.FormColumn>
           <S.FormColumn>
-            <Input
+            <Select
               name="counsel"
               label="Conselho"
               control={control}
@@ -78,7 +84,13 @@ const Register = () => {
               rules={{
                 required: true,
               }}
-            />
+            >
+              <option></option>
+              <option value="CRM-1">CRM-1</option>
+              <option value="CRM-2">CRM-2</option>
+              <option value="CRM-3">CRM-3</option>
+              <option value="CRM-4">CRM-4</option>
+            </Select>
             <Input
               name="numberRegister"
               label="Nº do Registro"

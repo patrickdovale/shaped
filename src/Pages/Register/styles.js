@@ -40,6 +40,8 @@ export const ColumnRight = styled.div`
   form {
     display: flex;
     flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
   }
 `;
 
